@@ -1,6 +1,7 @@
 # rye-env
 
-@[TOC](目录)
+> [CSDN 文章地址](https://blog.csdn.net/zhenndbc?spm=1000.2115.3001.5343)
+
 # Rye完整使用教学
 
 > [官方网址](https://rye.astral.sh/): https://rye.astral.sh/
