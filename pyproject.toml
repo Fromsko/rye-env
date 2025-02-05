@@ -1,0 +1,37 @@
+[project]
+name = "rye-env"
+version = "0.1.0"
+description = "Add your description here"
+dependencies = [
+    "fastapi>=0.115.8",
+    "uvicorn>=0.34.0",
+]
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = [
+    "black>=25.1.0",
+    "flake8>=7.1.1",
+    "pyinstaller>=6.11.1",
+]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/rye_env"]
+
+[tool.rye.scripts]
+web = "uvicorn src.rye_env.main:app --reload"
+build-exe = "pyinstaller --onefile src/rye_env/main.py"
+format = "black ."
+
+[[tool.rye.sources]]
+name = "default"
+url = "https://mirrors.aliyun.com/pypi/simple/"
